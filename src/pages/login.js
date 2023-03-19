@@ -75,7 +75,7 @@ export default function Login() {
                                     <span className=" font-medium">Email*</span> <input name="email" className="shadow pb-2 appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="email" value={cred.email} onChange={handleCreds} placeholder="Enter your email" required />
                                 </div>
                                 <div className="mt-3">
-                                    <span className=" font-medium">Password*</span><input name="password" className="shadow pb-2 appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" value={cred.password} onChange={handleCreds} placeholder="Create a password" required />
+                                    <span className=" font-medium">Password*</span><input name="password" className="shadow pb-2 appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="password" value={cred.password} onChange={handleCreds} placeholder="Create a password" required />
                                 </div>
 
                                 <div className="mt-5">
