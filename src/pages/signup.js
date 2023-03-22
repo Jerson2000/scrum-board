@@ -8,6 +8,7 @@ export default function SignUp() {
     const [cred, setCred] = useState(userModel);
     const { data, addData } = userData();
     const [err, setErr] = useState({
+        color: 'bg-red-700',
         errMsg: '',
         isErr: false
     })
@@ -17,14 +18,14 @@ export default function SignUp() {
     }
     const saveData = () => {
         if (cred.name === '' || cred.email === '' || cred.password === '') {
-            setErr({ ...err, errMsg: 'Some field/s are empty!', isErr: true });
+            setErr({ ...err, errMsg: 'Some field/s are empty!', isErr: true, color: 'bg-red-700'});
         } else {
             if (cred.password.split('').length >= 8) {
                 addData(cred);
                 setCred(userModel);
-                setErr({ ...err, errMsg: '', isErr: false });
+                setErr({ ...err, errMsg: 'Registered!', isErr: true,color:'bg-green-700' });
             } else {
-                setErr({ ...err, errMsg: 'Password must be at least 8 characters!!!', isErr: true });
+                setErr({ ...err, errMsg: 'Password must be at least 8 characters!!!', isErr: true,color: 'bg-red-700' });
             }
 
         }
@@ -32,6 +33,10 @@ export default function SignUp() {
     const login = () => {
         console.log(data);
         router.push("/login");
+    }
+
+    const msgClose =()=>{
+        setErr({ ...err,isErr: false});
     }
 
     return (
@@ -45,7 +50,7 @@ export default function SignUp() {
                                 <div className="font-bold text-3xl tracking-wider">Scrum Board</div>
                             </div>
                             <div className="px-20">
-                                <div className=" text-lg text-center bg-red-700 rounded-md text-white">{err.isErr ? err.errMsg : ''}</div>
+                                <div className={`text-lg text-center ${err.color} rounded-md text-white`}>{err.isErr ? err.errMsg : ''}<span className=" float-right mx-5 font-bold cursor-pointer" onClick={msgClose}>&#10799;</span></div>
                                 <div className="font-bold text-2xl mb-5">Sign up</div>
                                 <div>
                                     <span className=" font-medium">Name*</span><input name="name" className="shadow pb-2 appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" value={cred.name} onChange={handleCreds} placeholder="Enter your name" required />

@@ -12,7 +12,8 @@ export default function Login() {
         errMsg: '',
         isErr: false
     })
-/// asdasdasd
+
+    // Handle the pages if the user is already logged in
     useEffect(() => {
         const isLogged = data.some((obj, i) => {
             if (obj.isLoggedIn) {
@@ -47,7 +48,7 @@ export default function Login() {
                     router.push("/");
                 }, 2000);
             } else {
-                setErr({ ...err, errMsg: "Incorrect Credentials", isErr: true, color: "bg-red-700" });
+                setErr({ ...err, errMsg: "Incorrect Credentials", isErr: true, color: "bg-red-700" });                
             }
         }
 
@@ -56,6 +57,16 @@ export default function Login() {
     const register = () => {
         console.log(data);
         router.push("/signup")
+    }
+
+    const msgClose =()=>{
+        setErr({ ...err,isErr: false});
+    }
+
+    const autoCloseMsg =()=>{
+        setTimeout(() => {
+            setErr({ ...err,isErr: false});
+        }, 1500);
     }
 
     return (
@@ -69,13 +80,13 @@ export default function Login() {
                                 <div className="font-bold text-3xl tracking-wider">Scrum Board</div>
                             </div>
                             <div className="px-20">
-                                <div className={`text-lg text-center ${err.color} rounded-md text-white`}>{err.isErr ? err.errMsg : ''}</div>
+                                <div className={`text-lg text-center ${err.color} rounded-md text-white`}>{err.isErr ? err.errMsg : ''}<span className=" float-right mx-5 font-bold cursor-pointer" onClick={msgClose}>&#10799;</span></div>
                                 <div className="font-bold text-2xl mb-5">Login</div>
                                 <div className="mt-3">
                                     <span className=" font-medium">Email*</span> <input name="email" className="shadow pb-2 appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="email" value={cred.email} onChange={handleCreds} placeholder="Enter your email" required />
                                 </div>
                                 <div className="mt-3">
-                                    <span className=" font-medium">Password*</span><input name="password" className="shadow pb-2 appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="password" value={cred.password} onChange={handleCreds} placeholder="Create a password" required />
+                                    <span className=" font-medium">Password*</span><input name="password" className="shadow pb-2 appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="password" value={cred.password} onChange={handleCreds} placeholder="Enter your password" required />
                                 </div>
 
                                 <div className="mt-5">
