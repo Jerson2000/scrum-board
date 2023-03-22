@@ -31,7 +31,6 @@ export default function AddBoard({event,setEvent}) {
                     <input name="title" className="shadow pb-2 appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" value={board.title} onChange={handleBoard} placeholder="Board Title" required />
                 </div>
                 <div>
-                    {/* <input name="description" className="shadow pb-2 appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" value={board.description} onChange={handleBoard} placeholder="Board Description"><textarea/> */}
                     <textarea className="shadow pb-2 appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" rows={5} name="description" placeholder="Board Description" value={board.description} onChange={handleBoard}>
                     </textarea>
                 </div>

@@ -2,7 +2,6 @@ import AddBoard from "@/components/add_board";
 import DisplayBoard from "@/components/display_board";
 import Navbar from "@/components/navbar";
 import { userData } from "@/data_store/data";
-import Link from "next/link";
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
 
@@ -27,9 +26,6 @@ export default function Home() {
 
   }, []);
   const addBoard = () => {
-
-    // addBoardData(0, { id: 1, value: 'new data' });
-
     setEvent({ ...event, isAddBoard: true }); 
   }
 
@@ -48,20 +44,11 @@ export default function Home() {
 
           <div className="grid grid-cols-3 gap-3 my-5">
 
-            {/* <div className="max-w-[400px] flex flex-col gap-4 border border-gray-200 p-4 rounded-md cursor-pointer">
-              <div className="mb-5">
-                <h1 className="font-bold text-lg">Board Title</h1>
-                <p className="font-normal text-gray-500">Board Descriptions</p>
-              </div>
-            </div> */}
-
             <DisplayBoard />
             {event.isAddBoard ? <AddBoard event={event} setEvent={setEvent} /> : <div className="max-w-[400px] flex flex-col gap-4 border border-gray-200 p-4 rounded-md cursor-pointer" onClick={addBoard}>
               <div className="text-5xl mx-auto text-gray-500">+</div>
             </div>}
-            {/* <div className="max-w-[400px] flex flex-col gap-4 border border-gray-200 p-4 rounded-md cursor-pointer" onClick={addBoard}>
-              <div className="text-5xl mx-auto text-gray-500">+</div>
-            </div> */}
+
           </div>
 
         </div>
