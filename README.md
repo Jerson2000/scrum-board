@@ -1,13 +1,14 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## WS101(00175) - Exercises 
+## WS101(00175) - Exercises ( Gloabal useState with Zustand )
 ### Jerson Ray B. Desierto
 > * Exercise 3 - DONE ( check login page)
-> * Exercise 4 - In progress
+> * Exercise 4 - DONE ( check index and components )
 > * Exercise 5 - In progress
 
 ## Getting Started
-
+### Install Tailwind [Here](https://tailwindcss.com/docs/guides/nextjs)
+### Install Zustand  [Here](https://docs.pmnd.rs/zustand/getting-started/introduction)
 First, run the development server:
 
 ```bash
