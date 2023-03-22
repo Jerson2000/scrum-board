@@ -12,7 +12,7 @@ export default function Login() {
         errMsg: '',
         isErr: false
     })
-
+/// asdasdasd
     useEffect(() => {
         const isLogged = data.some((obj, i) => {
             if (obj.isLoggedIn) {
