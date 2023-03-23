@@ -1,6 +1,6 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## WS101(00175) - Exercises ( Gloabal useState with Zustand )
+## WS101(00175) - Exercises ( Global state with Zustand )
 ### Jerson Ray B. Desierto
 > * Exercise 3 - DONE ( check login page)
 > * Exercise 4 - DONE ( check index and components )
