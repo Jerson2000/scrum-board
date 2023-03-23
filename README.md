@@ -4,7 +4,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 ### Jerson Ray B. Desierto
 > * Exercise 3 - DONE ( check login page)
 > * Exercise 4 - DONE ( check index and components )
-> * Exercise 5 - In progress
+> * Exercise 5 - DONE ( check [board] and components )
 
 ## Getting Started
 ### Install Tailwind [Here](https://tailwindcss.com/docs/guides/nextjs)
