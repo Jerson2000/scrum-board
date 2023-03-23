@@ -2,6 +2,27 @@ import { useState, useEffect } from "react";
 import { userData } from "@/data_store/data";
 import Link from "next/link";
 import { useRouter } from "next/router";
+
+
+
+
+// EXERCISE 3 - 5 
+//  S
+//  U
+//  B
+//  M
+//  I
+//  T
+//  T
+//  E
+//  D BY " J E R S O N  R A Y B. D E S I E R T O "
+
+
+
+
+
+
+
 export default function DisplayCard({ itemIndex }) {
     const { user } = userData();
     const { asPath } = useRouter();

@@ -3,6 +3,18 @@ import cardModel from "@/model/cardModel";
 import { useRouter } from "next/router";
 import { useState } from "react";
 
+
+// EXERCISE 3 - 5 
+//  S
+//  U
+//  B
+//  M
+//  I
+//  T
+//  T
+//  E
+//  D BY " J E R S O N  R A Y B. D E S I E R T O "
+
 export default function AddCard({event,setEvent}) {
     const {asPath} = useRouter();    
     const { user, addCard } = userData();

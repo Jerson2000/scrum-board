@@ -5,6 +5,26 @@ import { userData } from "@/data_store/data";
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
 
+
+
+
+
+// EXERCISE 3 - 5 
+//  S
+//  U
+//  B
+//  M
+//  I
+//  T
+//  T
+//  E
+//  D BY " J E R S O N  R A Y B. D E S I E R T O "
+
+
+
+
+
+
 export default function Home() {
 
   const router = useRouter();
