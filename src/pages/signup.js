@@ -6,7 +6,7 @@ import { useState } from "react";
 export default function SignUp() {
     const router = useRouter();
     const [cred, setCred] = useState(userModel);
-    const { data, addData } = userData();
+    const { user, addData } = userData();
     const [err, setErr] = useState({
         color: 'bg-red-700',
         errMsg: '',
@@ -31,7 +31,7 @@ export default function SignUp() {
         }
     }
     const login = () => {
-        console.log(data);
+        console.log(user);
         router.push("/login");
     }
 

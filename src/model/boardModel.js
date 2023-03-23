@@ -1,7 +1,7 @@
 const boardModel = {
     title:'',
     description:'',
-    cards:[],
+    items:[],
 }
 
 export default boardModel;

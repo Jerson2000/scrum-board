@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 export default function Login() {
     const router = useRouter();
     const [cred, setCred] = useState(userModel);
-    const { data, updateData } = userData();
+    const { user, updateData } = userData();
     const [err, setErr] = useState({
         color: 'bg-red-700',
         errMsg: '',
@@ -15,7 +15,7 @@ export default function Login() {
 
     // Handle the pages if the user is already logged in
     useEffect(() => {
-        const isLogged = data.some((obj, i) => {
+        const isLogged = user.some((obj, i) => {
             if (obj.isLoggedIn) {
                 return true;
             }
@@ -34,7 +34,7 @@ export default function Login() {
             setErr({ ...err, errMsg: 'Some field/s are empty!', isErr: true, color: 'bg-red-700' });
         } else {
             setErr({ ...err, errMsg: '', isErr: false });
-            const isTrue = data.some((obj, i) => {
+            const isTrue = user.some((obj, i) => {
                 if (obj.email === cred.email && obj.password === cred.password) {
                     updateData(i, { ...obj, isLoggedIn: true });
                     return true;
@@ -55,7 +55,7 @@ export default function Login() {
 
     }
     const register = () => {
-        console.log(data);
+        console.log(user);
         router.push("/signup")
     }
 

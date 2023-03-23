@@ -1,39 +1,89 @@
+import { data } from 'autoprefixer'
 import { create } from 'zustand'
 
 
 const userData = create((set) => ({
-    data: [],          
-    setData: (data) => {
-        set(() => {
-            return { data: data }
-        })
-    },
-    addData: (data) =>
+  user: [],
+  setData: (data) => {
+    set(() => {
+      return { data: data }
+    })
+  },
+  addData: (data) =>
     set((state) => ({
-        data: [...state.data, data],
+      user: [...state.user, data],
     })),
-    updateData: (index, newObject) =>
+  updateData: (index, newObject) =>
     set((state) => ({
-      data: [
-        ...state.data.slice(0, index),
+      user: [
+        ...state.user.slice(0, index),
         newObject,
-        ...state.data.slice(index + 1),
+        ...state.user.slice(index + 1),
       ],
     })),
-   
-    addBoardData: (objectIndex, data) =>
+
+  addBoardData: (objectIndex, data) =>
     set((state) => ({
-      data: [
-        ...state.data.slice(0, objectIndex),
+      user: [
+        ...state.user.slice(0, objectIndex),
         {
-          ...state.data[objectIndex],
-          data: [...state.data[objectIndex].data, data],
+          ...state.user[objectIndex],
+          data: [...state.user[objectIndex].data, data],
         },
-        ...state.data.slice(objectIndex + 1),
+        ...state.user.slice(objectIndex + 1),
       ],
     })),
+  addBoardItem: (objectIndex, dataIndex, newBoardItem) =>
+    set((state) => ({
+      user: [
+        ...state.user.slice(0, objectIndex),
+        {
+          ...state.user[objectIndex],
+          data: [
+            ...state.user[objectIndex].data.slice(0, dataIndex),
+            {
+              ...state.user[objectIndex].data[dataIndex],
+              items: [
+                ...state.user[objectIndex].data[dataIndex].items,
+                newBoardItem,
+              ],
+            },
+          ],
+        },
+      ],
+    })),
+
+  addCard: (objectIndex, dataIndex, itemIndex, newCardObject) =>
+    set((state) => ({
+      user: [
+        ...state.user.slice(0, objectIndex),
+        {
+          ...state.user[objectIndex],
+          data: [
+            ...state.user[objectIndex].data.slice(0, dataIndex),
+            {
+              ...state.user[objectIndex].data[dataIndex],
+              items: [
+                ...state.user[objectIndex].data[dataIndex].items.slice(0, itemIndex),
+                {
+                  ...state.user[objectIndex].data[dataIndex].items[itemIndex],
+                  cards: [
+                    ...state.user[objectIndex].data[dataIndex].items[itemIndex].cards,
+                    newCardObject,
+                  ],
+                },
+                ...state.user[objectIndex].data[dataIndex].items.slice(itemIndex + 1),
+              ],
+            },
+            ...state.user[objectIndex].data.slice(dataIndex + 1),
+          ],
+        },
+        ...state.user.slice(objectIndex + 1),
+      ],
+    })),
+
 }))
 
 export {
-    userData
+  userData
 }

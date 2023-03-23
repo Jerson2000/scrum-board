@@ -3,14 +3,14 @@ import boardModel from "@/model/boardModel";
 import { useState } from "react";
 
 export default function AddBoard({event,setEvent}) {
-    const { data, addBoardData } = userData();
+    const { user, addBoardData } = userData();
     const [board, setBoard] = useState(boardModel);
 
     const handleBoard = (e) => {
         setBoard({ ...board, [e.target.name]: e.target.value });
     }
     const addBoard = () => {
-        data.some((obj, i) => {
+        user.some((obj, i) => {
             if (obj.isLoggedIn && board.description !== '' && board.title !== '') {
                 addBoardData(i, board);
                 setBoard(boardModel);

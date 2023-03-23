@@ -8,13 +8,13 @@ import { useState, useEffect } from "react";
 export default function Home() {
 
   const router = useRouter();
-  const { data, addBoardData } = userData();
+  const { user, addBoardData } = userData();
   const [event, setEvent] = useState({
     isAddBoard: false,
   });
 
   useEffect(() => {
-    const isLogged = data.some((obj, i) => {
+    const isLogged = user.some((obj, i) => {
       if (obj.isLoggedIn) {
         return true;
       }
@@ -30,7 +30,7 @@ export default function Home() {
   }
 
   const view = () => {
-    console.log(data);
+    console.log(user);
   }
 
 
