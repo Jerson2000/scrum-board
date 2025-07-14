@@ -5,22 +5,9 @@ import { useRouter } from "next/router";
 import AddCard from "./add_card";
 import DisplayCard from "./display_card";
 
-
-// EXERCISE 3 - 5 
-//  S
-//  U
-//  B
-//  M
-//  I
-//  T
-//  T
-//  E
-//  D BY " J E R S O N  R A Y B. D E S I E R T O "
-
-
 export default function DisplayBoardItem() {
-    const { user } = userData();
-    const { asPath } = useRouter();
+  const { user } = userData();
+  const { asPath } = useRouter();
 
     const [event, setEvent] = useState({
         isAddCard: false,

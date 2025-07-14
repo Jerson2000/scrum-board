@@ -3,21 +3,10 @@ import boardItemModel from "@/model/boardItemModel";
 import { useRouter } from "next/router";
 import { useState } from "react";
 
-// EXERCISE 3 - 5 
-//  S
-//  U
-//  B
-//  M
-//  I
-//  T
-//  T
-//  E
-//  D BY " J E R S O N  R A Y B. D E S I E R T O "
-
-export default function AddBoardItem({event,setEvent}) {
-    const {asPath} =useRouter(); // get url path 
-    const { user, addBoardItem } = userData();
-    const [item, setItem] = useState(boardItemModel);
+export default function AddBoardItem({ event, setEvent }) {
+  const { asPath } = useRouter(); // get url path
+  const { user, addBoardItem } = userData();
+  const [item, setItem] = useState(boardItemModel);
 
     const handleBoardItem = (e) => {
         setItem({ ...item, [e.target.name]: e.target.value });
